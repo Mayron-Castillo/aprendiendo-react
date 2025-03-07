@@ -11,6 +11,7 @@ import ChildToParent from './components/ChildToParent'
 import ChildToChild from './components/ChildToChild'
 import UseEffect from './components/UseEffect'
 import Fetch from './components/Fetch'
+import Axios from './components/Axios'
 
 function App() {
   const saySomething = () => {console.log('Something')}
@@ -58,6 +59,8 @@ function App() {
       {showEffect && <UseEffect></UseEffect>}
       <hr />
       <Fetch></Fetch>
+      <hr />
+      <Axios></Axios>
     </>
   )
 }
