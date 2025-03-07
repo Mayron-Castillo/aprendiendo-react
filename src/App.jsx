@@ -10,6 +10,7 @@ import Child from './components/Child'
 import ChildToParent from './components/ChildToParent'
 import ChildToChild from './components/ChildToChild'
 import UseEffect from './components/UseEffect'
+import Fetch from './components/Fetch'
 
 function App() {
   const saySomething = () => {console.log('Something')}
@@ -55,7 +56,8 @@ function App() {
       <h1>Use Effect</h1>
       <button onClick={changeEffect}>Toggle effect</button>
       {showEffect && <UseEffect></UseEffect>}
-
+      <hr />
+      <Fetch></Fetch>
     </>
   )
 }
