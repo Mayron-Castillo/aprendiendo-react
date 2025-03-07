@@ -12,6 +12,7 @@ import ChildToChild from './components/ChildToChild'
 import UseEffect from './components/UseEffect'
 import Fetch from './components/Fetch'
 import Axios from './components/Axios'
+import Form from './components/Form'
 
 function App() {
   const saySomething = () => {console.log('Something')}
@@ -32,6 +33,7 @@ function App() {
   const changeEffect = () => {
     setShowEffect(!showEffect)
   }
+  
   return (
     <>
       <h1 onClick={saySomething}>Hello World</h1>
@@ -61,6 +63,8 @@ function App() {
       <Fetch></Fetch>
       <hr />
       <Axios></Axios>
+      <hr />
+      <Form></Form>
     </>
   )
 }
