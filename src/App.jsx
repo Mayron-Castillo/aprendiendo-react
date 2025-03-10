@@ -6,7 +6,7 @@ import Home from './Home';
 function App() {
   return (
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<><HomePage /><Home /></>} />
         <Route path="/blog" element={<BlogPage />} />
       </Routes>
   );
