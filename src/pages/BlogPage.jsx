@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import PostCard from "../components/PostCard";
+import HeaderComponent from "../components/HeaderComponent"
 
 function BlogPage() {
     const [posts, setPosts] = useState([]);
@@ -25,10 +25,7 @@ function BlogPage() {
 
     return (
         <>
-            <ul className="list">
-                <li><Link className="li" to='/'>Home</Link></li>
-                <li><Link className="li" to='/blog'>Blog</Link></li>
-            </ul>
+            <HeaderComponent></HeaderComponent>
             <h2>BlogPage</h2>
             <ul>{postCards}</ul>
         </>
