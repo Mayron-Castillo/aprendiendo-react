@@ -1,6 +1,9 @@
+import React from "react"
 import { Link } from "react-router-dom"
 
 function PostCard(props) {
+    console.log('PostCard rendered');
+    
     const {post} = props
     return (
         <article>
@@ -12,4 +15,4 @@ function PostCard(props) {
     )
 }
 
-export default PostCard
+export default React.memo(PostCard); 

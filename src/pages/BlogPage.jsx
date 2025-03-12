@@ -2,9 +2,11 @@ import { useContext, useEffect } from "react"
 import PostCard from "../components/PostCard";
 import HeaderComponent from "../components/HeaderComponent"
 import { BlogContext } from "../contexts/blog.context";
+import { UserContext } from "../contexts/user.context";
 
 function BlogPage() {
     const {posts, error, getPosts} = useContext(BlogContext);
+    const {login, logout} = useContext(UserContext);
 
     useEffect(()=>{
         getPosts();
@@ -23,6 +25,8 @@ function BlogPage() {
             <HeaderComponent></HeaderComponent>
             <section>
                 <h2>BlogPage</h2>
+                <button onClick={()=> login()}>Login</button>
+                <button onClick={()=> logout()}>Logout</button>
 
                 {error ? <h2>Algo ha salido mal</h2> 
                 : postCards.length 
