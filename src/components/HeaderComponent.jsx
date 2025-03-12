@@ -6,7 +6,7 @@ function HeaderComponent() {
     const {user} = useContext(UserContext);
     return (
         <section className="background">
-            <h2 className="principal-text">Welcome {user}</h2>
+            <h2 className="principal-text">Welcome {user && <span>{user.name}</span>}</h2>
             <ul className="list">
                 <li><Link className="li" to='/'>Home</Link></li>
                 <li><Link className="li" to='/blog'>Blog</Link></li>
