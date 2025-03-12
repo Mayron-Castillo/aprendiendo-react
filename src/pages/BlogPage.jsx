@@ -4,11 +4,17 @@ import HeaderComponent from "../components/HeaderComponent"
 
 function BlogPage() {
     const [posts, setPosts] = useState([]);
+    const [error, setError] = useState(false)
     const getPosts = async ()=>{
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-        const data = await response.json();
-        console.log(data);
-        setPosts(data);
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+            const data = await response.json();
+            console.log(data);
+            setPosts(data);
+            setError(false);
+        } catch (e) {
+            setError(true);
+        }
     }
 
     useEffect(()=>{
@@ -26,8 +32,15 @@ function BlogPage() {
     return (
         <>
             <HeaderComponent></HeaderComponent>
-            <h2>BlogPage</h2>
-            <ul>{postCards}</ul>
+            <section>
+                <h2>BlogPage</h2>
+
+                {error ? <h2>Algo ha salido mal</h2> 
+                : postCards.length 
+                ? <ul>{postCards}</ul>
+                : <h2>Loading</h2>
+                }
+            </section>
         </>
     )
 }
